@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scal";>
+        <title>Dynamic Resume Builder</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Dynamic Resume Builder</h1>
+        <form id="resume-form">
+        <fieldset>
+            <legend style="font-size: 20px;"> Personal Informaion</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your Name" required>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" placeholder="Enter your email" required>
+ 
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" placeholder="Enter your Phone Number" required>
+
+            <label for="CNIC Number">CNIC number:</label>
+            <input type="tel" id="CNIC Number" placeholder="Enter your Phone Number" required>
+        </fieldset>
+
+        <fieldset>
+            <legend style="font-size: 20px;">Education</legend>
+            <label for="education"></label>
+            <textarea id="education" placeholder="Enter your Education" rowa="4" required></textarea>
+ 
+        </fieldset>
+        <fieldset>
+            <legend style="font-size: 20px;">Experience</legend>
+            <label for="experience"></label>
+            <textarea id="experienc" placeholder="Enter your workExperience" rowa="4" required></textarea>
+    
+        </fieldset>
+        <fieldset>
+            <legend style="font-size: 20px;">Skills</legend>
+            <label for="skills"></label>
+            <textarea id="skills" placeholder="Enter your Skills" rowa="4" required></textarea>
+    
+        </fieldset>
+
+        <button type="submit"><b>Generate Resume</b></button>
+    </form>
+    <br>
+    <!-- Dynamic Resume -->
+     <div id="resume-display">
+     <!-- resume will be genrated bellow  -->
+    </div>
+
+    <script src="script.js"></script>
+
+    </body>
+</html>
