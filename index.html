@@ -1,57 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scal";>
-        <title>Editable Resume Builder</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Editable Resume Builder</h1>
-        <form id="resume-form">
-        <fieldset>
-            <legend style="font-size: 20px;"> Personal Informaion</legend>
-            <label for="name">Name:</label>
-            <input type="text" id="name" placeholder="Enter your Name" required>
 
-            <label for="email">Email:</label>
-            <input type="text" id="email" placeholder="Enter your email" required>
- 
-            <label for="phone">Phone:</label>
-            <input type="tel" id="phone" placeholder="Enter your Phone Number" required>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shareable resume </title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-            <label for="CNIC Number">CNIC number:</label>
-            <input type="tel" id="CNIC Number" placeholder="Enter your Phone Number" required>
-        </fieldset>
+<body>
+    <div id="createContainer">
+        <div class="header">
+            <h1 class="text-center">Shareable Resume by Sabeen</h1>
+            <h3 class="tag-line" >An Interactive Resume Builder</h3>
+        </div>
 
-        <fieldset>
-            <legend style="font-size: 20px;">Education</legend>
-            <label for="education"></label>
-            <textarea id="education" placeholder="Enter your Education" rowa="4" required></textarea>
- 
-        </fieldset>
-        <fieldset>
-            <legend style="font-size: 20px;">Experience</legend>
-            <label for="experience"></label>
-            <textarea id="experienc" placeholder="Enter your workExperience" rowa="4" required></textarea>
-    
-        </fieldset>
-        <fieldset>
-            <legend style="font-size: 20px;">Skills</legend>
-            <label for="skills"></label>
-            <textarea id="skills" placeholder="Enter your Skills" rowa="4" required></textarea>
-    
-        </fieldset>
+        <form id="resumeForm">
+            <div class="sec-heading">
+                <span id="heading">Personal Information</span>
+                <span class="btn-toggle" data-target="personal-info">-</span>
+            </div>
+            <div id="personal-info" class="section-content">
+                <fieldset class="personal-information">
 
-        <button type="submit"><b>Generate Resume</b></button>
-    </form>
-    <br>
-    <!-- Dynamic & editable Resume -->
-     <div id="resume-display" contenteditable="true">
-     <!-- resume will be genrated bellow  -->
+
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" required placeholder="Enter Name">
+                    <label for="name">Father Name:</label>
+                    <input type="text" name="fatherName" id="fatherName" required placeholder="Enter Name">
+
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required placeholder="Enter Email">
+
+                    <label for="contact">Contact:</label>
+                    <input type="tel" name="contact" id="contact" required placeholder="Enter Contact">
+
+                    <label for="profilePicture">Profile Picture:</label>
+                    <input type="file" name="profilePicture" id="profilePicture" accept="image/*" required>
+                </fieldset>
+            </div>
+
+            <div class="sec-heading">
+                <span id="heading">Education</span>
+                <span class="btn-toggle" data-target="education-section">-</span>
+            </div>
+            <div id="education-section" class="section-content">
+                <fieldset class="education">
+                    <label for="education">Education:</label>
+                    <textarea name="education" required id="education"></textarea>
+                </fieldset>
+            </div>
+
+            <div class="sec-heading">
+                <span id="heading">Skills</span>
+                <span class="btn-toggle" data-target="skills-section">-</span>
+            </div>
+            <div id="skills-section" class="section-content">
+                <fieldset class="skills">
+                    <label for="skills">Skills:</label>
+                    <textarea name="skills" required id="skills"></textarea>
+                </fieldset>
+            </div>
+
+            <div class="sec-heading">
+                <span id="heading">Work Experience</span>
+                <span class="btn-toggle" data-target="work-experience-section">-</span>
+            </div>
+            <div id="work-experience-section" class="section-content">
+                <fieldset class="workExperience">
+                    <label for="workExperience">Work Experience:</label>
+                    <textarea name="workExperience" required id="workExperience"></textarea>
+                </fieldset>
+            </div>
+
+            <button class="submit" type="submit">Generate Resume</button>
+        </form>
     </div>
 
-    <script src="script.js"></script>
+    <div id="resumeOutput" class="hidden">
+        <!-- dynamically populated with user input -->
+    </div>
 
-    </body>
+
+    <script src="app.js"></script>
+</body>
+
 </html>
